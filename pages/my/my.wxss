@@ -1,0 +1,102 @@
+/* pages/my/my.wxss */
+html, page, .main-container {
+    height: 100%;
+    background: #E9E9E9;
+}
+.base-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 460rpx;
+    background: #FFFFFF;
+}
+.user-background {
+    position: absolute;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.user-info image {
+    height: 200rpx;
+    width: 200rpx;
+    border-radius: 100rpx;
+}
+.user-info view {
+    color: #FFFFFF;
+    z-index: 2;
+    margin-top: 20rpx;
+    font-weight: 700;
+}
+
+
+
+.order-container {
+    background: #FFFFFF;
+}
+.my-order, .my-voucher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2rpx solid #E9E9E9;
+    height: 120rpx;
+    margin: 0 30rpx;
+}
+.order-title, .voucher-title {
+    /*font-size: 40rpx;*/
+    font-weight: 700;
+}
+.more text {
+    font-size: 32rpx;
+    color: #9A9A9A;
+}
+.more image {
+    width: 16rpx;
+    height: 27rpx;
+    margin-left: 20rpx;
+}
+.order-menu {
+    display: flex;
+    align-items: center;
+}
+.menu-item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30rpx 0;
+}
+.menu-item image {
+    width: 60rpx;
+    height: 60rpx;
+}
+.menu-item text {
+    margin-top: 20rpx;
+    font-size: 32rpx;
+}
+.voucher-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.voucher-count {
+    width: 50rpx;
+    height: 50rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 25rpx;
+    background: #F34B2F;
+    margin-left: 10rpx;
+    font-size: 40rpx;
+}
+.line {
+    height: 20rpx;
+    background: #E9E9E9;
+}

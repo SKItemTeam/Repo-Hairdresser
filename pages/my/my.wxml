@@ -1,0 +1,54 @@
+<!--pages/my/my.wxml-->
+<view class="main-container">
+    <view class="base-container">
+        <view class="user-background">
+            <image mode="widthFix" src="/imgs/user_background.png"></image>
+        </view>
+        <view class="user-info">
+            <image src="/imgs/avatar8.png"></image>
+            <view>樊胜美</view>
+        </view>
+    </view>
+    <view class="order-container">
+        <view class="my-order">
+            <view class="order-title">我的订单</view>
+            <view class="more">
+                <text>查看更多</text>
+                <image src="/imgs/more.png"></image>
+            </view>
+        </view>
+        <view class="order-menu">
+            <view class="menu-item">
+                <image src="/imgs/appointment.png"></image>
+                <text>已预约</text>
+            </view>
+            <view class="menu-item">
+                <image src="/imgs/in_service.png"></image>
+                <text>服务中</text>
+            </view>
+            <view class="menu-item">
+                <image src="/imgs/complete.png"></image>
+                <text>已完成</text>
+            </view>
+            <view class="menu-item">
+                <image src="/imgs/evaluate.png"></image>
+                <text>待评价</text>
+            </view>
+            <view class="menu-item">
+                <image src="/imgs/delete.png"></image>
+                <text>已取消</text>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="my-voucher">
+            <view class="voucher-container">
+                <view class="voucher-title">优惠券</view>
+                <view class="voucher-count">4</view>
+            </view>
+            <view class="more">
+                <text>查看更多</text>
+                <image src="/imgs/more.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

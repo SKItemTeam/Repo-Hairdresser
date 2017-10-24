@@ -1,0 +1,39 @@
+/* pages/home/home.wxss */
+@import "/pages/storetemplete/storetemplete.wxss";
+@import "/pages/hairdressertemplete/hairdressertemplete.wxss";
+html, page, .main-container {
+    height: 100%;
+    background: #E9E9E9;
+}
+.main-tab-container, .main-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-tab {
+    height: 120rpx;
+}
+.tab-left, .tab-right {
+    text-align: center;
+    width: 250rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #FFFFFF;
+    color: #9A9A9A;
+    font-weight: 600;
+}
+.tab-left-selected, .tab-right-selected {
+    text-align: center;
+    width: 250rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #CB9E29;
+    color: #000000;
+    font-weight: 600;
+}
+.tab-left, .tab-left-selected {
+    border-radius: 20rpx 0 0 20rpx;
+}
+.tab-right, .tab-right-selected {
+    border-radius: 0 20rpx 20rpx 0;
+}
