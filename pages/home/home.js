@@ -83,5 +83,11 @@ Page({
         currentTab: 'right'
       })
     }
+   },
+
+   navEvent: function (e) {
+     wx.navigateTo({
+       url: '../../pages/map/map'
+     })
    }
 })
