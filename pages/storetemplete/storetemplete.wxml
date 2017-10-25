@@ -45,7 +45,7 @@
                         </view>
                         <view class="nav">
                             <view class="distance">235.66KM</view>
-                            <view class="nav-btn">导航</view>
+                            <view class="nav-btn" bindtap="navEvent">导航</view>
                         </view>
                     </view>
                 </view>
