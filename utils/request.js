@@ -1,4 +1,4 @@
-var host = "http://221.5.9.254:18888/"
+var host = "http://221.5.9.254:9090/"
 const util = require('./util')
 
 function request(params) {

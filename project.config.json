@@ -8,8 +8,8 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
-	"appid": "touristappid",
-	"projectname": "SK%E7%BE%8E%E5%8F%91",
+	"appid": "wxc71c4fcdedf1c22f",
+	"projectname": "SK",
 	"condition": {
 		"weapp": {
 			"current": -1,

@@ -9,32 +9,32 @@ App({
         wx.setStorageSync('logs', logs)
 
         // 登录
-        wx.login({
-            success: loginCode => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                if (loginCode.code) {
-                    wx.request({
-                        url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxc71c4fcdedf1c22f&secret=70cc39a484c94014e56dc87f818de60f&js_code=' + loginCode.code + '&grant_type=authorization_code',
-                        data: {
-                            code: loginCode.code
-                        },
-                        success: function(res) {
-                            console.log(res.data);
-                            that.globalData.openid = res.data.openid;
-                            that.globalData.session_key = res.data.session_key;
-                        },
-                        fail: function(event) {
+        // wx.login({
+        //     success: loginCode => {
+        //         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        //         if (loginCode.code) {
+        //             wx.request({
+        //                 url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxc71c4fcdedf1c22f&secret=70cc39a484c94014e56dc87f818de60f&js_code=' + loginCode.code + '&grant_type=authorization_code',
+        //                 data: {
+        //                     code: loginCode.code
+        //                 },
+        //                 success: function(res) {
+        //                     console.log(res.data);
+        //                     that.globalData.openid = res.data.openid;
+        //                     that.globalData.session_key = res.data.session_key;
+        //                 },
+        //                 fail: function(event) {
 
-                        },
-                        complete: function() {
+        //                 },
+        //                 complete: function() {
 
-                        }
-                    })
-                } else {
-                    console.log('获取用户登录状态失败！' + res.Msg)
-                }
-            }
-        })
+        //                 }
+        //             })
+        //         } else {
+        //             console.log('获取用户登录状态失败！' + res.Msg)
+        //         }
+        //     }
+        // })
         // 获取用户信息
         wx.getSetting({
             success: res => {

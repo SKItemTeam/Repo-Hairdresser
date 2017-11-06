@@ -14,6 +14,7 @@ Page({
      */
     onLoad: function (options) {
         // this.getList()
+        this.testFunc()
     },
 
     /**
@@ -89,5 +90,37 @@ Page({
      wx.navigateTo({
        url: '../../pages/map/map'
      })
-   }
+   },
+
+    testFunc: function() {
+        getApp().http.request({
+            url: "auth",
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                "credco": "123456.",
+                "crednm": "admin"
+            },
+            method: "POST",
+            success: function (res) {
+                console.log(res)
+            }
+        })
+
+        // wx.request({
+        //     url: "http://221.5.9.254:9090/auth",
+        //     header: {
+        //         'content-type': 'application/json' 
+        //     },
+        //     data: {
+        //             "credco": "123456.",
+        //             "crednm": "admin"
+        //     },
+        //     method: "POST",
+        //     success: function(res) {
+        //         console.log(res)
+        //     }
+        // })
+    }
 })
