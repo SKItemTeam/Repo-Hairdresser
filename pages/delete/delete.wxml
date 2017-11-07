@@ -1,0 +1,5 @@
+<!--pages/delete/delete.wxml-->
+<template name = "deleteT">
+  <view>delete</view>
+</template>
+

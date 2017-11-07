@@ -1,0 +1,5 @@
+<!--pages/complete/complete.wxml-->
+<template name = "completeT">
+  <view>complete</view>
+</template>
+

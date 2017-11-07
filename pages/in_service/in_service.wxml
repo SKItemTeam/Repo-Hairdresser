@@ -1,0 +1,4 @@
+<!--pages/InService/in_service.wxml-->
+<template name = "in_serviceT">
+  <view>in_service</view>
+</template>

@@ -1,4 +1,4 @@
-/* pages/appointment/appointment.wxss */
+/* pages/storetemplete/storetemplete.wxss */
 .store-list-item {
     background: #E9E9E9;
     padding: 10rpx;

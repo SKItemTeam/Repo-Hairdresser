@@ -100,3 +100,62 @@ html, page, .main-container {
     height: 20rpx;
     background: #E9E9E9;
 }
+
+
+.waiting-container {
+    background: #FFFFFF;
+    padding: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.waiting-number{
+  background: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+.waiting-time{
+  background: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+.number-text {
+    color: #C3AA64;
+    font-size: 30rpx;
+}
+.number-number {
+    color: #E26924;
+    font-weight: bold;
+}
+.cancle-btn {
+    margin-left: 20rpx;
+    height: 60rpx;
+    width: 120rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color: #BF9E4D;
+    border: 1rpx solid #BF9E4D;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+}
+.list-item-container {
+    background: #FFFFFF;
+    padding: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-item-container view{
+  color: #BEBEBE;
+  font-size: 30rpx;
+}
+.master image {
+    width: 16rpx;
+    height: 27rpx;
+    margin-left: 20rpx;
+}
+.master text{
+  color: #000000;
+  font-weight: bold;
+  font-size: 40rpx;
+}

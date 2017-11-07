@@ -1,37 +1,41 @@
 {
-  "pages":[
-      "pages/home/home",
-    "pages/hairdresser/hairdresser",
-    
+  "pages": [
+    "pages/home/home",
     "pages/hairdressertemplete/hairdressertemplete",
-    
     "pages/my/my",
     "pages/storetemplete/storetemplete",
     "pages/map/map",
     "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/appointment/appointment",
+    "pages/in_service/in_service",
+    "pages/complete/complete",
+    "pages/evaluate/evaluate",
+    "pages/delete/delete"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "SK美发",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#000000",
     "backgroundColor": "#D9BA6A",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "iconPath": "imgs/home_sub.png",
-      "selectedIconPath": "imgs/home_sub_selected.png",
-      "text": "我要预约"
-    }, {
-      "pagePath": "pages/my/my",
-      "iconPath": "imgs/my_sub.png",
-      "selectedIconPath": "imgs/my_sub_selected.png",
-      "text": "个人信息"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "imgs/home_sub.png",
+        "selectedIconPath": "imgs/home_sub_selected.png",
+        "text": "我要预约"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "imgs/my_sub.png",
+        "selectedIconPath": "imgs/my_sub_selected.png",
+        "text": "个人信息"
+      }
+    ]
   }
 }

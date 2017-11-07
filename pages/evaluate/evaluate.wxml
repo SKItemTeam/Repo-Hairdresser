@@ -1,0 +1,4 @@
+<!--pages/evaluate/evaluate.wxml-->
+<template name = "evaluateT">
+  <view>evaluate</view>
+</template>

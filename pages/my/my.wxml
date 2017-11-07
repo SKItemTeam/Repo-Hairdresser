@@ -1,4 +1,11 @@
 <!--pages/my/my.wxml-->
+
+<import src="/pages/appointment/appointment.wxml" />
+<import src="/pages/in_service/in_service.wxml" />
+<import src="/pages/complete/complete.wxml" />
+<import src="/pages/evaluate/evaluate.wxml" />
+<import src="/pages/delete/delete.wxml" />
+
 <view class="main-container">
     <view class="base-container">
         <view class="user-background">
@@ -13,32 +20,38 @@
         <view class="my-order">
             <view class="order-title">我的订单</view>
             <view class="more">
-                <text>查看更多</text>
+                <text bindtap='payEvent'>查看更多</text>
                 <image src="/imgs/more.png"></image>
             </view>
         </view>
         <view class="order-menu">
-            <view class="menu-item">
+            <view class="menu-item" bindtap='appointmentTapEvent'>
                 <image src="/imgs/appointment.png"></image>
                 <text>已预约</text>
             </view>
-            <view class="menu-item">
+            <view class="menu-item" bindtap='in_serviceTapEvent'>
                 <image src="/imgs/in_service.png"></image>
                 <text>服务中</text>
             </view>
-            <view class="menu-item">
+            <view class="menu-item" bindtap='completeTapEvent'>
                 <image src="/imgs/complete.png"></image>
                 <text>已完成</text>
             </view>
-            <view class="menu-item">
+            <view class="menu-item" bindtap='evaluateTapEvent'>
                 <image src="/imgs/evaluate.png"></image>
                 <text>待评价</text>
             </view>
-            <view class="menu-item">
+            <view class="menu-item" bindtap='deleteTapEvent'>
                 <image src="/imgs/delete.png"></image>
                 <text>已取消</text>
             </view>
         </view>
+        <template is="{{currentTab == 'appointment' ? 'appointmentT' : ''}}"></template> 
+        <template is="{{currentTab == 'in_service' ? 'in_serviceT' : ''}}"></template>
+        <template is="{{currentTab == 'complete' ? 'completeT' : ''}}"></template>
+        <template is="{{currentTab == 'evaluate' ? 'evaluateT' : ''}}"></template>
+        <template is="{{currentTab == 'delete' ? 'deleteT' : ''}}"></template>
+        
         <view class="line"></view>
         <view class="my-voucher">
             <view class="voucher-container">
