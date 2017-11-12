@@ -1,0 +1,182 @@
+<!--pages/store_detail/store_detail.wxml-->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='line'></view>
+
+<view class="store">
+  <view class="store-info">
+    <view class="store-base-info">
+      <view class="store-base-info-top">
+        <view class="store-name">天河旗舰店</view>
+      </view>
+      <view class="store-base-info-bottom">
+        <view>营业时间: 10:00-12:30</view>
+        <view>联系电话: 0754</view>
+      </view>
+    </view>
+  </view>
+  <view class="store-status">
+    <view class="fans-container">
+      <view class="fans-count">521</view>
+      <view class="fans">
+        <image src="/imgs/fans_small.png"></image>
+        <view>粉丝数</view>
+      </view>
+    </view>
+    <view class="satisfaction-container">
+      <view class="satisfaction-value">90%</view>
+      <view class="satisfaction">
+        <image src="/imgs/satisfaction_small.png"></image>
+        <view>满意度</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='insertline'></view>
+
+<view class="location-container">
+  <view class="location">
+    <image src="/imgs/location.png"></image>
+    <view>天河区北京路32户</view>
+  </view>
+  <view class="nav">
+    <view class="distance">235.66KM</view>
+    <view class="nav-btn" bindtap="navEvent">导航</view>
+  </view>
+</view>
+
+<view class='line'></view>
+
+<view class="hairdresser-list-container">
+  <view class="hairdresser-list">
+    <view class="hairdresser-list-item">
+      <view class="hairdresser">
+        <view class="hairdresser-info">
+          <view class="avatar">
+            <image src="/imgs/avatar8.png"></image>
+          </view>
+          <view class="base-info">
+            <view class="base-info-top">
+              <view class="hairdresser-name">盛文龙</view>
+              <view class="hairdresser-location">天河旗舰店</view>
+            </view>
+            <view class="base-info-bottom">
+              <view class="bottom-left">
+                <image src="/imgs/fans_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+              <view class="bottom-right">
+                <image src="/imgs/satisfaction_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="apply-btn">预约</view>
+      </view>
+      <view class="wait-status">需要等待10人，约10分钟</view>
+    </view>
+    <view class="hairdresser-list-item">
+      <view class="hairdresser">
+        <view class="hairdresser-info">
+          <view class="avatar">
+            <image src="/imgs/avatar8.png"></image>
+          </view>
+          <view class="base-info">
+            <view class="base-info-top">
+              <view class="hairdresser-name">盛文龙</view>
+              <view class="hairdresser-location">天河旗舰店</view>
+            </view>
+            <view class="base-info-bottom">
+              <view class="bottom-left">
+                <image src="/imgs/fans_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+              <view class="bottom-right">
+                <image src="/imgs/satisfaction_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="apply-btn">预约</view>
+      </view>
+      <view class="wait-status">需要等待10人，约10分钟</view>
+    </view>
+    <view class="hairdresser-list-item">
+      <view class="hairdresser">
+        <view class="hairdresser-info">
+          <view class="avatar">
+            <image src="/imgs/avatar8.png"></image>
+          </view>
+          <view class="base-info">
+            <view class="base-info-top">
+              <view class="hairdresser-name">盛文龙</view>
+              <view class="hairdresser-location">天河旗舰店</view>
+            </view>
+            <view class="base-info-bottom">
+              <view class="bottom-left">
+                <image src="/imgs/fans_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+              <view class="bottom-right">
+                <image src="/imgs/satisfaction_big.png"></image>
+                <text>粉丝数356</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="apply-btn">预约</view>
+      </view>
+      <view class="wait-status">需要等待10人，约10分钟</view>
+    </view>
+  </view>
+</view>
+
+<view class='line'></view>
+
+<view>
+  <view class='evaluate-title'>
+    <view class='evaluate-title-left'>评价(201)</view>
+    <view class='evaluate-Satisfaction'>
+      <image src='/imgs/satisfaction_big.png'></image>
+      <text>满意度70%</text>
+    </view>
+  </view>
+
+  <view class='insertline'></view>
+
+  <view>
+    <view class="evaluate-content">
+      <view class="evaluate-content-info">
+        <view class="avatar">
+          <image src="/imgs/avatar2.png"></image>
+        </view>
+        <view class="evaluate-base-info">
+          <view class="evaluate-base-info-top">
+            <view class="evaluate-name">于文华</view>
+          </view>
+          <view class="evaluate-base-info-bottom">
+            132****6666
+          </view>
+        </view>
+      </view>
+      <view class="start_level">
+        <image src='/imgs/star_active.png'></image>
+        <image src='/imgs/star_active.png'></image>
+        <image src='/imgs/star_active.png'></image>
+        <image src='/imgs/star_active.png'></image>
+        <image src='/imgs/star_gray.png'></image>
+        <text>4分</text>
+      </view>
+    </view>
+    <view class='evaluate-text'>在这里你能听到和看到。。。</view>
+  </view>
+</view>

@@ -12,7 +12,7 @@
                 <view class="store-list-item">
                     <view class="title">
                         <view class="store-name">天河旗舰店</view>
-                        <view class="more">
+                        <view class="more" bindtap='stores_detail_info'>
                             <text>点击进入</text>
                             <image src="/imgs/more.png"></image>
                         </view>

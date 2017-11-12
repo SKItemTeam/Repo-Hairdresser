@@ -37,3 +37,9 @@ html, page, .main-container {
 .tab-right, .tab-right-selected {
     border-radius: 0 20rpx 20rpx 0;
 }
+
+.search {
+    width: 60rpx;
+    height: 60rpx;
+    border: 1px solid;
+}

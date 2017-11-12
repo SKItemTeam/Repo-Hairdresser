@@ -11,7 +11,8 @@
     "pages/in_service/in_service",
     "pages/complete/complete",
     "pages/evaluate/evaluate",
-    "pages/delete/delete"
+    "pages/delete/delete",
+    "pages/store_detail/store_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

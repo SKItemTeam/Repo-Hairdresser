@@ -1,4 +1,57 @@
 <!--pages/InService/in_service.wxml-->
-<template name = "in_serviceT">
-  <view>in_service</view>
+<template name="in_serviceT">
+  <view class="line"></view>
+  <view>
+    <view class="list-item-container">
+      <view class='list-item-container-content'>预约发型师</view>
+      <view class='master'>
+        <image src="/imgs/more.png"></image>
+        <text>盛文龙</text>
+      </view>
+    </view>
+
+    <view class='list-item-container'>
+      <view>预约门店</view>
+      <view>天河旗舰店</view>
+    </view>
+
+
+    <view class='list-item-container'>
+      <view>预约电话</view>
+      <view>1352261234</view>
+    </view>
+
+
+    <view class='list-item-container'>
+      <view>预约项目</view>
+      <view>剪吹造型</view>
+    </view>
+
+    <view class='list-item-container'>
+      <view>预约时间</view>
+      <view>2017.10.12</view>
+    </view>
+
+
+    <view class='list-item-container'>
+      <view>到店时间</view>
+      <view>2017.10.12</view>
+    </view>
+
+    <view class='list-item-container'>
+      <view>服务时间</view>
+      <view>2017.10.12</view>
+    </view>
+
+    <view class="smallLine"></view>
+
+    <view class='balance-container'>
+      <view class='balance-left'>小计</view>
+      <view class='balance-right'>
+        <view class='balance-text'>130.00¥</view>
+        <view class='balance-btn'>结算</view>
+      </view>
+    </view>
+
+  </view>
 </template>

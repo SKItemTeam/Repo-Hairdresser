@@ -122,5 +122,11 @@ Page({
         //         console.log(res)
         //     }
         // })
+    }, 
+
+    stores_detail_info:function(e){
+      wx.navigateTo({
+        url: '../../pages/store_detail/store_detail'
+      })
     }
 })
