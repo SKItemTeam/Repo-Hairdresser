@@ -1,0 +1,70 @@
+/* pages/coupons/coupons.wxss */
+html, page, .main-container {
+    height: 100%;
+    background: #E9E9E9;
+}
+.main-container {
+
+}
+.coupons-item {
+    background: #FFFFFF;
+    display: flex;
+    margin: 20rpx 10rpx;
+    position: relative;
+}
+.coupons-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx;
+}
+.coupons-left image {
+    width: 100rpx;
+    height: 69rpx;
+}
+.coupons-type {
+    font-size: 30rpx;
+    font-weight: 700;
+    margin: 20rpx 0 10rpx 0;
+}
+.coupons-content {
+    font-size: 26rpx;
+    color: #A7A7A7;
+    margin: 10rpx 0;
+}
+.coupons-time {
+    font-size: 26rpx;
+    color: #A7A7A7;
+    margin: 10rpx 0 20rpx 0;
+}
+.coupons-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D9BA6A;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 150rpx;
+}
+.coupons-right-gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #A1A1A1;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 150rpx;
+}
+.coupons-right text, .coupons-right-gray text {
+    font-size: 30rpx;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.coupons-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
