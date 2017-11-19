@@ -128,5 +128,11 @@ Page({
       wx.navigateTo({
         url: '../../pages/store_detail/store_detail'
       })
+    },
+
+    haires_detail_info:function(e){
+      wx.navigateTo({
+        url: '../../pages/hair_detail/hair_detail'
+      })
     }
 })

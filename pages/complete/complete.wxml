@@ -72,7 +72,7 @@
     <view class='comlete-select-container'>
       <view></view>
       <view class='balance-right'>
-        <view class="cancle-btn">评价</view>
+        <view class="cancle-btn" bindtap='evaluateContextTapEvent'>评价</view>
         <view class="cancle-btn">删除</view>
       </view>
     </view>

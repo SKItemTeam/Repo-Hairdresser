@@ -3,7 +3,7 @@
     <view class="hairdresser-list-container">
         <view class="hairdresser-list">
             <view class="hairdresser-list-item">
-                <view class="hairdresser">
+                <view class="hairdresser" bindtap='haires_detail_info'>
                     <view class="hairdresser-info">
                         <view class="avatar">
                             <image src="/imgs/avatar8.png"></image>

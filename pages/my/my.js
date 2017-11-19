@@ -127,4 +127,14 @@ Page({
       currentTab: 'delete'
     })
   },
+
+
+  evaluateContextTapEvent : function (e) {
+    wx.navigateTo({
+      url: '../../pages/evaluate_context/evaluate_context'
+    })
+  },
+
+
+
 })

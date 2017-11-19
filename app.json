@@ -13,7 +13,9 @@
     "pages/evaluate/evaluate",
     "pages/delete/delete",
     "pages/store_detail/store_detail",
-    "pages/coupons/coupons"
+    "pages/coupons/coupons",
+    "pages/evaluate_context/evaluate_context",
+    "pages/hair_detail/hair_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
