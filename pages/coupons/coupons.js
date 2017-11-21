@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+
+  couponsDetailEvent:function () {
+    wx.navigateTo({
+      url: '../../pages/coupons_detail/coupons_detail'
+    })
+  }, 
+
 })

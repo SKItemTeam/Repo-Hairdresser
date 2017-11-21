@@ -15,7 +15,10 @@
     "pages/store_detail/store_detail",
     "pages/coupons/coupons",
     "pages/evaluate_context/evaluate_context",
-    "pages/hair_detail/hair_detail"
+    "pages/hair_detail/hair_detail",
+    "pages/coupons_detail/coupons_detail",
+    "pages/order/order",
+    "pages/balance/balance"
   ],
   "window": {
     "backgroundTextStyle": "light",

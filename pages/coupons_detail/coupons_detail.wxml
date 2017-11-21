@@ -1,0 +1,22 @@
+<!--pages/coupons_detail/coupons_detail.wxml-->
+<view class='main-container'>
+
+  <view class='coupons'>
+    <view class='coupons_top'>
+    <image class='coupons_back_image' src='/imgs/coupons_filp2.png'></image>
+      <view class='coupons_top_bold'>盛文龙发型师赠送折扣券</view>
+      <view class='coupons_top_small'>凭此抵用券，消费100元抵用30元</view> 
+    </view>
+
+    <view class='coupons_bottom'>
+      <view class='coupons_bottom_yellow'>抵用券编号</view>
+      <view class='coupons_bottom_bold'>1206 5798 5656 3565</view>
+    </view>
+  </view>
+
+  <view class='instruction'>
+   <view>使用规则</view>
+   <view class='instr_detail'>有效期:2014.12.31至2017.10.29</view>
+  </view>
+
+</view>

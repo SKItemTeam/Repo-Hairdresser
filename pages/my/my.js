@@ -135,6 +135,16 @@ Page({
     })
   },
 
+  couponsTapEvent : function(e) {
+    wx.navigateTo({
+      url: '../../pages/coupons/coupons'
+    })
+  },
 
+  balanceTapEvent: function () {
+    wx.navigateTo({
+      url: '../../pages/balance/balance',
+    })
+  },
 
 })

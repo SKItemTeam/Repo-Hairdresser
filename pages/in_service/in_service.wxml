@@ -49,7 +49,7 @@
       <view class='balance-left'>小计</view>
       <view class='balance-right'>
         <view class='balance-text'>130.00¥</view>
-        <view class='balance-btn'>结算</view>
+        <view class='balance-btn' bindtap='balanceTapEvent'>结算</view>
       </view>
     </view>
 

@@ -1,0 +1,70 @@
+<!--pages/balance/balance.wxml-->
+<view class='main-container'>
+
+  <view class='line'></view>
+
+  <view class='info flex_row row_item2'>
+    <view class='item_bold'>付款门店</view>
+    <view class='item_gray'>天河旗舰店</view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='info'>
+    <view class='flex_row row_item'>
+      <view class='item_bold'>服务项目</view>
+      <view class='item_gray'>剪吹造型</view>
+    </view>
+
+    <view class='smallLine'></view>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>发型师</view>
+      <view class='item_gray'>盛文龙</view>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='info flex_row row_item2'>
+    <view class='item_bold'>优惠券</view>
+    <view class='flex_row'>
+      <view class='item_gray'>天河旗舰店一周年庆祝礼券</view>
+      <image src='/imgs/more.png' class='more_img'></image>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='info flex_row row_item2'>
+    <view class='item_bold'>付款方式</view>
+    <view class='flex_row'>
+      <view class='item_gray'>微信支付</view>
+      <image src='/imgs/more.png' class='more_img'></image>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view>
+    <view class='info flex_row row_item2'>
+      <view class='item_bold'>商品价格</view>
+      <view class='item_gray'>130.00¥</view>
+    </view>
+    <view class='info flex_row row_item2'>
+      <view class='item_bold'>优惠金额</view>
+      <view class='item_gray'>-30.00¥</view>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='info flex_row result'>
+    <view class='item_bold'>小计</view>
+    <view class='item_yellow'>100.00¥</view>
+  </view>
+
+  <view class='commitBtn'>支付账单</view>
+
+
+</view>

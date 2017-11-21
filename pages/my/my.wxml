@@ -53,7 +53,7 @@
         <template is="{{currentTab == 'delete' ? 'deleteT' : ''}}"></template>
         
         <view class="line"></view>
-        <view class="my-voucher">
+        <view class="my-voucher" bindtap='couponsTapEvent'>
             <view class="voucher-container">
                 <view class="voucher-title">优惠券</view>
                 <view class="voucher-count">4</view>

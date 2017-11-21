@@ -1,0 +1,45 @@
+<!--pages/order/order.wxml-->
+
+<view class='main-container'>
+
+  <view class='line'></view>
+
+  <view class='info'>
+    <view class='flex_row row_item'>
+      <view class='item_bold'>发型师</view>
+      <view class='item_gray'>盛文龙</view>
+    </view>
+
+    <view class='smallLine'></view>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>预约项目</view>
+      <view class='flex_row'>
+        <view class='item_gray'>洗剪造型</view>
+        <image src='/imgs/more.png' class='more_img'></image>
+      </view>
+    </view>
+
+    <view class='smallLine'></view>
+
+    <view class='flex_row row_item'>
+      <view class='item_bold'>到店时间</view>
+      <view class='flex_row'>
+        <view class='item_gray'>2017-10-17 10:30</view>
+        <image src='/imgs/more.png' class='more_img'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='info flex_row result'>
+    <view class='item_bold'>小计</view>
+    <view class='item_yellow'>130.00¥</view>
+  </view>
+
+
+  <view class='commitBtn'>提交订单</view>
+
+
+</view>

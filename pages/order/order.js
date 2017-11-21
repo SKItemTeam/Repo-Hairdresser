@@ -1,15 +1,11 @@
-// pages/hair_detail/hair_detail.js
+// pages/order/order.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '/imgs/hair-detail.png',
-      '/imgs/hair-detail.png',
-      '/imgs/hair-detail.png'
-    ]
+  
   },
 
   /**
@@ -66,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  orderTapEvent : function () {
-    wx.navigateTo({
-      url: '../../pages/order/order',
-    })
-  },
+  }
 })

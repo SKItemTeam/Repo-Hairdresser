@@ -10,7 +10,7 @@
                 <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
                 <view class="coupons-time">2017.10.10-2017.11.12</view>
             </view>
-            <view class="coupons-right">
+            <view class="coupons-right" bindtap='couponsDetailEvent'>
                 <text>查看详情</text>
             </view>
         </view>

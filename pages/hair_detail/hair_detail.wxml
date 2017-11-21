@@ -112,4 +112,4 @@
   </view>
 </view>
 
-<view class='orderBtn'>我要预约</view>
+<view class='orderBtn' bindtap='orderTapEvent'>我要预约</view>
