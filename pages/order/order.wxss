@@ -30,6 +30,7 @@ html, page, .main-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 }
 
 .row_item {
@@ -48,6 +49,10 @@ html, page, .main-container {
 .item_yellow {
   color: #f17728;
   font-weight: bold;
+}
+
+.item_marginLeft {
+  margin-left: 10rpx;
 }
 
 .result {
