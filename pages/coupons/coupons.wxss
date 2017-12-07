@@ -68,3 +68,4 @@ html, page, .main-container {
     flex-direction: column;
     justify-content: center;
 }
+

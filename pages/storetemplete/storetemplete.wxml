@@ -8,11 +8,11 @@
             </view>
         </view>-->
         <view class="store-list-container">
-            <view class="store-list">
+            <view class="store-list" wx:for="{{storeList}}">
                 <view class="store-list-item">
                     <view class="title">
-                        <view class="store-name">天河旗舰店</view>
-                        <view class="more" bindtap='stores_detail_info'>
+                        <view class="store-name">{{item.name}}</view>
+                        <view class="more" data-id='{{item.id}}' bindtap='stores_detail_info'>
                             <text>点击进入</text>
                             <image src="/imgs/more.png"></image>
                         </view>
@@ -22,14 +22,14 @@
                         <view class="index-container">
                             <view class="store-status">
                                 <view class="fans-container">
-                                    <view class="fans-count">521</view>
+                                    <view class="fans-count">{{item.fansCount}}</view>
                                     <view class="fans">
                                         <image src="/imgs/fans_small.png"></image>
                                         <view>粉丝数</view>
                                     </view>
                                 </view>
                                 <view class="satisfaction-container">
-                                    <view class="satisfaction-value">90%</view>
+                                    <view class="satisfaction-value">{{item.starlevel}}</view>
                                     <view class="satisfaction">
                                         <image src="/imgs/satisfaction_small.png"></image>
                                         <view>满意度</view>
@@ -41,50 +41,10 @@
                     <view class="location-container">
                         <view class="location">
                             <image src="/imgs/location.png"></image>
-                            <view>天河区北京路32户</view>
+                            <view>{{item.address}}</view>
                         </view>
                         <view class="nav">
-                            <view class="distance">235.66KM</view>
-                            <view class="nav-btn" bindtap="navEvent">导航</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="store-list-item">
-                    <view class="title">
-                        <view class="store-name">天河旗舰店</view>
-                        <view class="more">
-                            <text>点击进入</text>
-                            <image src="/imgs/more.png"></image>
-                        </view>
-                    </view>
-                    <view class="store-img-container">
-                        <image src="/imgs/store-img.png"></image>
-                        <view class="index-container">
-                            <view class="store-status">
-                                <view class="fans-container">
-                                    <view class="fans-count">521</view>
-                                    <view class="fans">
-                                        <image src="/imgs/fans_small.png"></image>
-                                        <view>粉丝数</view>
-                                    </view>
-                                </view>
-                                <view class="satisfaction-container">
-                                    <view class="satisfaction-value">90%</view>
-                                    <view class="satisfaction">
-                                        <image src="/imgs/satisfaction_small.png"></image>
-                                        <view>满意度</view>
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="location-container">
-                        <view class="location">
-                            <image src="/imgs/location.png"></image>
-                            <view>天河区北京路32户</view>
-                        </view>
-                        <view class="nav">
-                            <view class="distance">235.66KM</view>
+                            <view class="distance">{{item.distance}}KM</view>
                             <view class="nav-btn" bindtap="navEvent">导航</view>
                         </view>
                     </view>

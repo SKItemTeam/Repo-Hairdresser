@@ -10,5 +10,5 @@
         <image src="/imgs/search.png" class='search'></image>
     </view>
     
-    <template is="{{currentTab == 'left' ? 'storetemplete' : 'hairdressertemplete'}}"></template>
+    <template is="{{currentTab == 'left' ? 'storetemplete' : 'hairdressertemplete'}}" data="{{storeList: storeList, hairdresserList: hairdresserList}}"></template>
 </view>

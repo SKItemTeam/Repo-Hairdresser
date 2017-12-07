@@ -1,18 +1,19 @@
 // pages/coupons/coupons.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    couponsList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getCouponsList()
   },
 
   /**
@@ -70,5 +71,27 @@ Page({
       url: '../../pages/coupons_detail/coupons_detail'
     })
   }, 
+
+
+
+  getCouponsList: function () {
+    var that = this
+    app.http.request({
+      url: "coupons/10/1",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          couponsList: res.data.list
+        })
+        console.log(that.data.couponsList)
+      }
+    })
+  },
+
 
 })

@@ -6,7 +6,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        currentTab: "left"
+        currentTab: "left",
+        storeList: [],
+        hairdresserList: []
     },
 
     /**
@@ -15,6 +17,8 @@ Page({
     onLoad: function (options) {
         // this.getList()
         this.testFunc()
+        this.getStoreList()
+        this.getHairdresserList()
     },
 
     /**
@@ -66,33 +70,33 @@ Page({
 
     },
 
-  /***********************************************************
-   * 自定义函数区
-   ***********************************************************/
+    /***********************************************************
+     * 自定义函数区
+     ***********************************************************/
 
 
-   // 切换理发店tab和发型师tab时调用
-   tabEvent: function(e) {
-    var that = this
-    if(e.currentTarget.dataset.tab == 'left') {
-      that.setData({
-        currentTab: 'left'
-      })
-    }
-    else if(e.currentTarget.dataset.tab == 'right') {
-      that.setData({
-        currentTab: 'right'
-      })
-    }
-   },
+    // 切换理发店tab和发型师tab时调用
+    tabEvent: function (e) {
+        var that = this
+        if (e.currentTarget.dataset.tab == 'left') {
+            that.setData({
+                currentTab: 'left'
+            })
+        }
+        else if (e.currentTarget.dataset.tab == 'right') {
+            that.setData({
+                currentTab: 'right'
+            })
+        }
+    },
 
-   navEvent: function (e) {
-     wx.navigateTo({
-       url: '../../pages/map/map'
-     })
-   },
+    navEvent: function (e) {
+        wx.navigateTo({
+            url: '../../pages/map/map'
+        })
+    },
 
-    testFunc: function() {
+    testFunc: function () {
         getApp().http.request({
             url: "auth",
             header: {
@@ -122,17 +126,68 @@ Page({
         //         console.log(res)
         //     }
         // })
-    }, 
-
-    stores_detail_info:function(e){
-      wx.navigateTo({
-        url: '../../pages/store_detail/store_detail'
-      })
     },
 
-    haires_detail_info:function(e){
-      wx.navigateTo({
-        url: '../../pages/hair_detail/hair_detail'
-      })
+    stores_detail_info: function (e) {
+        console.log(e)
+        wx.navigateTo({
+            url: '../../pages/store_detail/store_detail?id=' + e.currentTarget.dataset.id
+        })
+    },
+
+    haires_detail_info: function (e) {
+        wx.navigateTo({
+            url: '../../pages/hair_detail/hair_detail?id=' + e.currentTarget.dataset.id
+        })
+    },
+
+    getStoreList: function () {
+        var that = this
+        app.http.request({
+            url: "shops/10/1",
+            header: {
+                'content-type': 'application/json',
+                'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "POST",
+            data: {
+                "keyStr": "",
+                "latitude": "23.372223",
+                "longitude": "116.718995",
+                "range": "1.5"
+            },
+            success: function (res) {
+                console.log(res)
+                that.setData({
+                    storeList: res.data.list
+                })
+                console.log(that.data.storeList)
+            }
+        })
+    },
+
+    getHairdresserList: function () {
+        var that = this
+        app.http.request({
+            url: "hairdressers/10/1",
+            header: {
+                'content-type': 'application/json',
+                'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "POST",
+            data: {
+                "keyStr": "",
+                "latitude": "23.372223",
+                "longitude": "116.718995",
+                "range": "1.5"
+            },
+            success: function (res) {
+                console.log(res)
+                that.setData({
+                    hairdresserList: res.data.list
+                })
+                console.log(that.data.hairdresserList)
+            }
+        })
     }
 })
