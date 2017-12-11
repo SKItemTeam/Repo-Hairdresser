@@ -15,43 +15,6 @@ App({
                 if (loginCode.code) {
                     var code = loginCode.code
                     console.log(loginCode.code)
-                    // wx.getUserInfo({
-                    //     success: function(res) {
-                    //         console.log(res)
-                    //         var userData = util.strToJson(res.rawData)
-                    //         console.log(userData)
-                    //         getApp().http.request({
-                    //             url: "auth/register",
-                    //             header: {
-                    //                 'content-type': 'application/json'
-                    //             },
-                    //             data: {
-                    //                 "city": userData.city,
-                    //                 "country": userData.country,
-                    //                 "createdate": userData,
-                    //                 "creator": userData.nickName,
-                    //                 "datalevel": "123456.",
-                    //                 "editer": "admin",
-                    //                 "gender": userData.gender,
-                    //                 //"id": "admin",                                   "city": "123456.",
-                    //                 "language": userData.language,
-                    //                 //"lastPasswordResetDate": userData.lastPasswordResetDate,
-                    //                 //"memo": userData.memo,
-                    //                 //"modifydate": userData.modifydate,
-                    //                 "name": userData.nickname,
-                    //                 "nickname": userData.nickname,
-                    //                 "phone": userData.phone,
-                    //                 "province": userData.province,
-
-
-                    //             },
-                    //             method: "POST",
-                    //             success: function (res) {
-                    //                 console.log(res)
-                    //             }
-                    //         })
-                    //     }
-                    // })
                     getApp().http.request({
                         url: "auth/" + code,
                         header: {
@@ -61,27 +24,10 @@ App({
                         },
                         method: "GET",
                         success: function(res) {
-                            console.log(res)
-                            that.globalData.token = res.data.token
+                            console.log(res.header.authorization.split(" ")[1])
+                            that.globalData.token = res.header.authorization.split(" ")[1]
                         }
                     })
-                    // wx.request({
-                    //     url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxc71c4fcdedf1c22f&secret=70cc39a484c94014e56dc87f818de60f&js_code=' + loginCode.code + '&grant_type=authorization_code',
-                    //     data: {
-                    //         code: loginCode.code
-                    //     },
-                    //     success: function(res) {
-                    //         console.log(res.data);
-                    //         that.globalData.openid = res.data.openid;
-                    //         that.globalData.session_key = res.data.session_key;
-                    //     },
-                    //     fail: function(event) {
-
-                    //     },
-                    //     complete: function() {
-
-                    //     }
-                    // })
                 } else {
                     console.log('获取用户登录状态失败！' + res.Msg)
                 }

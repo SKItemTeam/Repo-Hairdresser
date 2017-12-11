@@ -40,6 +40,5 @@ html, page, .main-container {
 
 .search {
     width: 60rpx;
-    height: 60rpx;
     border: 1px solid;
 }

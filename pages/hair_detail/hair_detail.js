@@ -76,13 +76,15 @@ Page({
     },
 
     orderTapEvent: function () {
+        var that = this
         wx.navigateTo({
-            url: '../../pages/order/order',
+            url: '../../pages/order/order?hairId=' + that.data.hairdresserDetail.id + '&hairName=' + that.data.hairdresserDetail.name + '&shopId=' + that.data.hairdresserDetail.shopId + '&shopName=' + that.data.hairdresserDetail.shopName,
         })
     },
 
     getHairdresserDetail: function() {
         var that = this
+        console.log(app.globalData.token)
         app.http.request({
             url: "hairdressers/" + that.data.hairdresserId,
             header: {

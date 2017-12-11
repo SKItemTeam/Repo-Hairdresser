@@ -7,7 +7,7 @@
             <view bindtap="tabEvent" data-tab="left" class="{{currentTab == 'left' ? 'tab-left-selected':'tab-left'}}">理发店</view>
             <view bindtap="tabEvent" data-tab="right" class="{{currentTab == 'right' ? 'tab-right-selected':'tab-right'}}">发型师</view>
         </view>
-        <image src="/imgs/search.png" class='search'></image>
+        <image mode="widthFix" src="/imgs/search.png" class='search'></image>
     </view>
     
     <template is="{{currentTab == 'left' ? 'storetemplete' : 'hairdressertemplete'}}" data="{{storeList: storeList, hairdresserList: hairdresserList}}"></template>

@@ -8,6 +8,7 @@
 </swiper>
 
 <view class='line'></view>
+
 <view class="store">
   <view class="store-info">
     <view class="store-base-info">

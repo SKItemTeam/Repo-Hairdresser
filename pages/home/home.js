@@ -143,6 +143,7 @@ Page({
 
     getStoreList: function () {
         var that = this
+        console.log(app.globalData.token)
         app.http.request({
             url: "shops/10/1",
             header: {
@@ -159,7 +160,7 @@ Page({
             success: function (res) {
                 console.log(res)
                 that.setData({
-                    storeList: res.data.list
+                    storeList: res.data.rows
                 })
                 console.log(that.data.storeList)
             }
@@ -168,6 +169,7 @@ Page({
 
     getHairdresserList: function () {
         var that = this
+        console.log(app.globalData.token)
         app.http.request({
             url: "hairdressers/10/1",
             header: {
@@ -184,7 +186,7 @@ Page({
             success: function (res) {
                 console.log(res)
                 that.setData({
-                    hairdresserList: res.data.list
+                    hairdresserList: res.data.rows
                 })
                 console.log(that.data.hairdresserList)
             }
