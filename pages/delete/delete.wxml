@@ -1,46 +1,48 @@
 <!--pages/delete/delete.wxml-->
 <template name = "deleteT">
+  <view wx:for="{{evaluateList}}"> 
+
   <view class="line"></view>
   <view>
     <view class="list-item-container">
       <view class='list-item-container-content'>预约发型师</view>
       <view class='master'>
-        <image src="/imgs/more.png"></image>
-        <text>盛文龙</text>
+        <image src="/imgs/avatar2.png"></image>
+        <text>{{item.hairdresserName}}</text>
       </view>
     </view>
 
     <view class='list-item-container'>
       <view>预约门店</view>
-      <view>天河旗舰店</view>
+      <view>{{item.shopName}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>预约电话</view>
-      <view>1352261234</view>
+      <view>{{item.phone}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>预约项目</view>
-      <view>剪吹造型</view>
+      <view>{{item.itemName}}</view>
     </view>
 
     <view class='list-item-container'>
       <view>预约时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.orderTime}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>到店时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
     <view class='list-item-container'>
       <view>取消时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
     <view class="smallestLine"></view>
@@ -51,6 +53,8 @@
         <view class="cancle-btn">删除</view>
       </view>
     </view>
+
+  </view>
 
   </view>
 </template>

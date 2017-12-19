@@ -91,9 +91,28 @@ Page({
     },
 
     navEvent: function (e) {
-        wx.navigateTo({
-            url: '../../pages/map/map'
-        })
+      var that = this
+      app.http.request({
+        url: "shops/" + e.currentTarget.dataset.id,
+        header: {
+          'content-type': 'application/json',
+          'Authorization': "Bearer " + app.globalData.token,
+        },
+        method: "GET",
+        success: function (res) {
+          console.log(res)
+          wx.openLocation({
+            latitude: res.data.latitude,
+            longitude: res.data.longitude,
+            scale: 28,
+            name: res.data.name,
+            // address: '',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        }
+      })
     },
 
     testFunc: function () {
@@ -145,7 +164,7 @@ Page({
         var that = this
         console.log(app.globalData.token)
         app.http.request({
-            url: "shops/10/1",
+            url: "shops/10/0",
             header: {
                 'content-type': 'application/json',
                 'Authorization': "Bearer " + app.globalData.token,
@@ -171,7 +190,7 @@ Page({
         var that = this
         console.log(app.globalData.token)
         app.http.request({
-            url: "hairdressers/10/1",
+            url: "hairdressers/10/0",
             header: {
                 'content-type': 'application/json',
                 'Authorization': "Bearer " + app.globalData.token,

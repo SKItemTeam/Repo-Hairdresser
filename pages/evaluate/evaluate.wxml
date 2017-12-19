@@ -1,69 +1,71 @@
 <!--pages/evaluate/evaluate.wxml-->
 <template name = "evaluateT">
+  <view wx:for="{{evaluateList}}"> 
+
   <view class="line"></view>
   <view>
     <view class="list-item-container">
       <view class='list-item-container-content'>预约发型师</view>
       <view class='master'>
-        <image src="/imgs/more.png"></image>
-        <text>盛文龙</text>
+        <image src="/imgs/avatar2.png"></image>
+        <text>{{item.hairdresserName}}</text>
       </view>
     </view>
 
     <view class='list-item-container'>
       <view>预约门店</view>
-      <view>天河旗舰店</view>
+      <view>{{item.shopName}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>预约电话</view>
-      <view>1352261234</view>
+      <view>{{item.phone}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>预约项目</view>
-      <view>剪吹造型</view>
+      <view>{{item.itemName}}</view>
     </view>
 
     <view class='list-item-container'>
       <view>预约时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
 
     <view class='list-item-container'>
       <view>到店时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
     <view class='list-item-container'>
       <view>服务时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
     <view class='list-item-container'>
       <view>付款时间</view>
-      <view>2017.10.12</view>
+      <view>{{item.arrvilTime}}</view>
     </view>
 
     <view class="smallLine"></view>
 
     <view class='complete-item-container'>
       <view>消费原价</view>
-      <view class='complete-item-container-OldMoney'>130.00¥</view>
+      <view class='complete-item-container-OldMoney'>{{item.price}}¥</view>
     </view>
 
     <view class='complete-item-container'>
       <view>优惠券</view>
-      <view>-30.00¥</view>
+      <view>{{item.couponValue}}¥</view>
     </view>
 
     <view class='subtotal-container'>
       <view class='balance-left'>小计</view>
       <view class='balance-right'>
-        <view class='balance-text'>100.00¥</view>
+        <view class='balance-text'>{{item.totalPrice}}¥</view>
       </view>
     </view>
 
@@ -76,6 +78,8 @@
         <view class="cancle-btn">删除</view>
       </view>
     </view>
+
+  </view>
 
   </view>
 </template>

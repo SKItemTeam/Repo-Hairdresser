@@ -1,9 +1,49 @@
 // pages/map/map.js
+var app = getApp()
 Page({
+    /**
+    * 页面的初始数据
+    */
+    data: {
+      shopId : '',
+      shopName: '',
+      lon : '',
+      lat : '',
+    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function (options) {
+      this.setData({
+        shopId: options.id,
+      }),
+      this.getShopLocation()
+    },
     onReady: function (e) {
         // 使用 wx.createMapContext 获取 map 上下文
-        this.mapCtx = wx.createMapContext('myMap')
+        //this.mapCtx = wx.createMapContext('myMap')
     },
+    getShopLocation : function () {
+      var that = this
+      app.http.request({
+        url: "shops/" + this.data.shopId,
+        header: {
+          'content-type': 'application/json',
+          'Authorization': "Bearer " + app.globalData.token,
+        },
+        method: "GET",
+        success: function (res) {
+          console.log(res)
+          that.setData({
+            shopName: res.data.name,
+            lon: res.data.longitude,
+            lat: res.data.latitude,
+          })
+          that.openLocationFun()
+        }
+      })
+    },
+
     getCenterLocation: function () {
         this.mapCtx.getCenterLocation({
             success: function (res) {
@@ -43,10 +83,10 @@ Page({
     },
     openLocationFun: function() {
         wx.openLocation({
-            latitude: 316.46,
-            longitude: 39.92,
+            latitude: this.data.lat,
+            longitude: this.data.lon,
             scale: 28,
-            name: '嘉泽中心大厦',
+            name: this.data.shopName,
             // address: '',
             success: function(res) {},
             fail: function(res) {},

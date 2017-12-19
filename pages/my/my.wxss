@@ -184,8 +184,8 @@ html, page, .main-container {
 }
 
 .master image {
-  width: 16rpx;
-  height: 27rpx;
+  width: 40rpx;
+  height: 40rpx;
   margin-left: 20rpx;
 }
 

@@ -1,69 +1,17 @@
 <!--pages/coupons/coupons.wxml-->
 <view class="main-container">
     <view class="coupons-list" wx:for="{{couponsList}}">
-        <!-- <view class="coupons-item">
+        <view class="coupons-item">
             <view class="coupons-left">
-                <image src="/imgs/voucher_active.png"></image>
+                <image src='{{item.couponsLeftImage}}'></image>
             </view>
             <view class="coupons-center">
                 <view class="coupons-type">{{item.name}}</view>
-                <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
-                <view class="coupons-time">2017.10.10-2017.11.12</view>
+                <view class="coupons-content">{{item.conditions}}</view>
+                <view class="coupons-time">{{item.couponsTime}}</view>
             </view>
-            <view class="coupons-right" bindtap='couponsDetailEvent'>
-                <text>查看详情</text>
-            </view>
-        </view> -->
-        <!-- <view class="coupons-item">
-            <view class="coupons-left">
-                <image src="/imgs/voucher_active.png"></image>
-            </view>
-            <view class="coupons-center">
-                <view class="coupons-type">天河旗舰店一周年抵用券</view>
-                <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
-                <view class="coupons-time">2017.10.10-2017.11.12</view>
-            </view>
-            <view class="coupons-right">
-                <text>查看详情</text>
-            </view>
-        </view>
-        <view class="coupons-item">
-            <view class="coupons-left">
-                <image src="/imgs/voucher_active.png"></image>
-            </view>
-            <view class="coupons-center">
-                <view class="coupons-type">天河旗舰店一周年抵用券</view>
-                <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
-                <view class="coupons-time">2017.10.10-2017.11.12</view>
-            </view>
-            <view class="coupons-right">
-                <text>查看详情</text>
-            </view>
-        </view>
-        <view class="coupons-item">
-            <view class="coupons-left">
-                <image src="/imgs/voucher_active.png"></image>
-            </view>
-            <view class="coupons-center">
-                <view class="coupons-type">天河旗舰店一周年抵用券</view>
-                <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
-                <view class="coupons-time">2017.10.10-2017.11.12</view>
-            </view>
-            <view class="coupons-right">
-                <text>查看详情</text>
-            </view>
-        </view> -->
-        <view class="coupons-item">
-            <view class="coupons-left">
-                <image src="/imgs/voucher_gray.png"></image>
-            </view>
-            <view class="coupons-center">
-                <view class="coupons-type">{{item.name}}</view>
-                <view class="coupons-content">凭此抵用券，消费100元抵用30元</view>
-                <view class="coupons-time">2017.10.10-2017.11.12</view>
-            </view>
-            <view class="{{item.status}} == 'NORMAL' ? 'coupons-right' : 'coupons-right-gray'">
-                <text>已过期</text>
+            <view class="{{item.couponsRightClass}}" data-id='{{item.id}}' data-conditions='{{item.conditions}}' bindtap="{{item.bindtapEvent}}">
+                <text>{{item.couponsRightText}}</text>
             </view>
         </view>
     </view>

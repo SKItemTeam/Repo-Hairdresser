@@ -5,16 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    number: 0,
-    waiting_human: 0,
-    waitingTime: 0,
-    master: '',
-    store: '',
-    phone: '',
-    project: '',
-    money: '',
-    appointment_daytime: '',
-    arrive_daytime: '',
   },
 
   /**
