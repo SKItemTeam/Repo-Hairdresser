@@ -19,4 +19,6 @@
    <view class='instr_detail'>有效期: {{detailInfo.limitTime}}</view>
   </view>
 
+  <view class='commitBtn' style="{{selectStyle}}" bindtap="selectCouponsEvent">使用优惠券</view>
+
 </view>

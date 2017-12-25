@@ -13,16 +13,16 @@
         </view>
         <view class="user-info">
             <image src="/imgs/avatar8.png"></image>
-            <view>樊胜美</view>
+            <view>{{userInfo.allotName}}</view>
         </view>
     </view>
     <view class="order-container">
         <view class="my-order">
             <view class="order-title">我的订单</view>
-            <view class="more">
+            <!-- <view class="more">
                 <text bindtap='payEvent'>查看更多</text>
                 <image src="/imgs/more.png"></image>
-            </view>
+            </view> -->
         </view>
         <view class="order-menu">
             <view class="menu-item" bindtap='appointmentTapEvent'>
@@ -46,11 +46,11 @@
                 <text>已取消</text>
             </view>
         </view>
-        <template is="{{currentTab == 'appointment' ? 'appointmentT' : ''}}"></template> 
-        <template is="{{currentTab == 'in_service' ? 'in_serviceT' : ''}}"></template>
-        <template is="{{currentTab == 'complete' ? 'completeT' : ''}}"></template>
-        <template is="{{currentTab == 'evaluate' ? 'evaluateT' : ''}}"></template>
-        <template is="{{currentTab == 'delete' ? 'deleteT' : ''}}"></template>
+        <template is="{{currentTab == 'appointment' ? 'appointmentT' : ''}}" data="{{appointmentList: appointmentList}}"></template> 
+        <template is="{{currentTab == 'in_service' ? 'in_serviceT' : ''}}" data="{{inServiceList: inServiceList}}"></template>
+        <template is="{{currentTab == 'complete' ? 'completeT' : ''}}" data="{{completeList: completeList}}"></template>
+        <template is="{{currentTab == 'evaluate' ? 'evaluateT' : ''}}" data="{{evaluateList: evaluateList}}"></template>
+        <template is="{{currentTab == 'delete' ? 'deleteT' : ''}}" data="{{deleteList: deleteList}}"></template>
         
         <view class="line"></view>
         <view class="my-voucher" bindtap='couponsTapEvent'>

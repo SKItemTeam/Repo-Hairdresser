@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isForSelect: false,
     couponsList: [],
   },
 
@@ -13,6 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      isForSelect: options.isForSelect
+    })
     this.getCouponsList()
   },
 
@@ -68,7 +72,7 @@ Page({
 
   couponsDetailEvent:function (e) {
     wx.navigateTo({
-      url: '../../pages/coupons_detail/coupons_detail?id=' + e.currentTarget.dataset.id + '&conditions=' + e.currentTarget.dataset.conditions
+      url: '../../pages/coupons_detail/coupons_detail?isForSelect=' + this.data.isForSelect + '&id=' + e.currentTarget.dataset.id + '&conditions=' + e.currentTarget.dataset.conditions
     })
   }, 
 

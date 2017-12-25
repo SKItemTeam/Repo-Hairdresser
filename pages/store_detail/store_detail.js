@@ -120,7 +120,7 @@ Page({
         method: "POST",
         data: {
           "page": 0,
-          "search": that.data.storeDetail.name,
+          "search": that.data.storeDetail.id,
           "size": 10,
           "sortNames": [
             "id"

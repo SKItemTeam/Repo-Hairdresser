@@ -34,7 +34,7 @@
 <view class='Address'>
   <view class='store_info'>
     <view class='store_name'>{{hairdresserDetail.shopName}}</view>
-    <view class='store_more'>
+    <view class='store_more' bindtap="shopDetailEvent">
       <view>点击进入</view>
       <image src='/imgs/more.png'></image>
     </view>
@@ -58,8 +58,8 @@
   <view class='works_info'>
     <view class='works_title'>个人作品</view>
     <view class='works_more'>
-      <view>查看更多</view>
-      <image src='/imgs/more.png'></image>
+      <!-- <view>查看更多</view>
+      <image src='/imgs/more.png'></image> -->
     </view>
   </view>
   <view class='insertline'></view>
@@ -75,7 +75,7 @@
 
 <view>
   <view class='evaluate-title'>
-    <view class='evaluate-title-left'>评价(201)</view>
+    <view class='evaluate-title-left'>评价({{evaluateTotleNum}})</view>
     <view class='evaluate-Satisfaction'>
       <image src='/imgs/satisfaction_big.png'></image>
       <text>满意度{{hairdresserDetail.cmark}}</text>
@@ -84,7 +84,8 @@
 
   <view class='insertline'></view>
 
-  <view>
+  <view class="store-list" wx:for="{{evaluateList}}">
+    <view>
     <view class="evaluate-content">
       <view class="evaluate-content-info">
         <view class="avatar">
@@ -92,24 +93,30 @@
         </view>
         <view class="evaluate-base-info">
           <view class="evaluate-base-info-top">
-            <view class="evaluate-name">于文华</view>
+            <view class="evaluate-name">{{item.name}}</view>
           </view>
           <view class="evaluate-base-info-bottom">
-            132****6666
+            ??
           </view>
         </view>
       </view>
       <view class="start_level">
-        <image src='/imgs/star_active.png'></image>
-        <image src='/imgs/star_active.png'></image>
-        <image src='/imgs/star_active.png'></image>
-        <image src='/imgs/star_active.png'></image>
-        <image src='/imgs/star_gray.png'></image>
-        <text>4分</text>
+        <image src='{{item.image0}}'></image>
+        <image src='{{item.image1}}'></image>
+        <image src='{{item.image2}}'></image>
+        <image src='{{item.image3}}'></image>
+        <image src='{{item.image4}}'></image>
+        <text>{{item.mark}}分</text>
       </view>
     </view>
-    <view class='evaluate-text'>在这里你能听到和看到。。。</view>
+    <view class='evaluate-text'>{{item.comment}}</view>
   </view>
+
+  </view>
+  
+
+
+
 </view>
 
 <view class='orderBtn' bindtap='orderTapEvent'>我要预约</view>

@@ -1,6 +1,6 @@
 <!--pages/delete/delete.wxml-->
 <template name = "deleteT">
-  <view wx:for="{{evaluateList}}"> 
+  <view wx:for="{{deleteList}}"> 
 
   <view class="line"></view>
   <view>
@@ -50,7 +50,7 @@
     <view class='comlete-select-container'>
       <view></view>
       <view class='balance-right'>
-        <view class="cancle-btn">删除</view>
+        <view class="cancle-btn" data-id="{{item.id}}" bindtap='cancleOrderDeleteTapEvent'>删除</view>
       </view>
     </view>
 

@@ -12,7 +12,10 @@ Page({
             '/imgs/hair-detail.png'
         ],
         hairdresserId: '',
-        hairdresserDetail: {}
+        hairdresserDetail: {},
+        evaluateTotleNum: '',
+        evaluateList: [],
+        workList: [],
     },
 
     /**
@@ -24,6 +27,8 @@ Page({
             hairdresserId: options.id
         })
         this.getHairdresserDetail()
+        this.getEvaluateList()
+        this.getWorkList()
     },
 
     /**
@@ -104,5 +109,113 @@ Page({
                 console.log(that.data.hairdresserDetail)
             }
         })
-    }
+    },
+    
+    shopDetailEvent : function () {
+      wx.navigateTo({
+        url: '../../pages/store_detail/store_detail?id=' + this.data.hairdresserDetail.shopId
+      })
+    },
+
+    navEvent: function (e) {
+      var that = this
+      app.http.request({
+        url: "shops/" + that.data.hairdresserDetail.shopId,
+        header: {
+          'content-type': 'application/json',
+          'Authorization': "Bearer " + app.globalData.token,
+        },
+        method: "GET",
+        success: function (res) {
+          console.log(res)
+          wx.openLocation({
+            latitude: res.data.latitude,
+            longitude: res.data.longitude,
+            scale: 28,
+            name: res.data.name,
+            // address: '',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        }
+      })  
+    },
+
+    getEvaluateList: function (e) {
+      var that = this
+      app.http.request({
+        url: "metes/list",
+        header: {
+          'content-type': 'application/json',
+          'Authorization': "Bearer " + app.globalData.token,
+        },
+        method: "POST",
+        data: {
+          "page": 0,
+          "search": that.data.hairdresserDetail.id,
+          "size": 10,
+          "sortNames": [
+            "id"
+          ],
+          "sortOrders": [
+            "ASC"
+          ]
+        },
+        success: function (res) {
+          console.log(res)
+          for (var i = 0; i < res.data.rows.length; i++) {
+            res.data.rows[i].image0 = (res.data.rows[i].mark >= 1 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+            res.data.rows[i].image1 = (res.data.rows[i].mark >= 2 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+            res.data.rows[i].image2 = (res.data.rows[i].mark >= 3 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+            res.data.rows[i].image3 = (res.data.rows[i].mark >= 4 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+            res.data.rows[i].image4 = (res.data.rows[i].mark >= 5 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          }
+          that.setData({
+            evaluateTotleNum: res.data.total,
+            evaluateList: res.data.rows
+          })
+          console.log(that.data.evaluateList)
+        }
+      })
+    },
+
+    getWorkList : function () {
+      var that = this
+      app.http.request({
+        url: "workses/list",
+        header: {
+          'content-type': 'application/json',
+          'Authorization': "Bearer " + app.globalData.token,
+        },
+        method: "POST",
+        data: {
+          "page": 0,
+          "search": that.data.hairdresserDetail.id,
+          "size": 10,
+          "sortNames": [
+            "id"
+          ],
+          "sortOrders": [
+            "ASC"
+          ]
+        },
+        success: function (res) {
+          console.log(res)
+          // for (var i = 0; i < res.data.rows.length; i++) {
+          //   res.data.rows[i].image0 = (res.data.rows[i].mark >= 1 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          //   res.data.rows[i].image1 = (res.data.rows[i].mark >= 2 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          //   res.data.rows[i].image2 = (res.data.rows[i].mark >= 3 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          //   res.data.rows[i].image3 = (res.data.rows[i].mark >= 4 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          //   res.data.rows[i].image4 = (res.data.rows[i].mark >= 5 ? '/imgs/star_active.png' : '/imgs/star_gray.png')
+          // }
+          that.setData({
+            workList: res.data.rows
+          })
+          console.log(that.data.workList)
+        }
+      })
+
+      
+    },
 })

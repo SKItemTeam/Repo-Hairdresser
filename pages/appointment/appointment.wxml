@@ -1,7 +1,6 @@
 <!--pages/appointment/appointment.wxml-->
 <template name="appointmentT">
   <view wx:for="{{appointmentList}}">
-    <view>
 
     <view class="line"></view>
     <view class="waiting-container">
@@ -11,7 +10,7 @@
       </view>
       <view class="waiting-time">
         <view class="number-text">需等待{{item.waitCount}}人，约{{item.waitTime}}分钟</view>
-        <view class="cancle-btn">取消</view>
+        <view class="cancle-btn" data-id="{{item.id}}" bindtap="cancleAppointmentEvent">取消</view>
       </view>
     </view>
 
@@ -53,7 +52,6 @@
       <view>{{item.arriveTime}}</view>
     </view>
 
-    </view>
   </view>
 
   

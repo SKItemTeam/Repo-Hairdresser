@@ -56,3 +56,15 @@ html, page, .main-container {
 .instr_detail {
   font-size: 30rpx;
 }
+
+
+.commitBtn {
+  background-color: #d9ba6a;
+  position: absolute;
+  bottom: 0;
+  height: 150rpx;
+  width: 100%;
+  line-height: 150rpx;
+  text-align: center;
+  font-weight: bold;
+}

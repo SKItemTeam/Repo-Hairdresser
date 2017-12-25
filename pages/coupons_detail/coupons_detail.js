@@ -5,8 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isForSelect: false,
     id: '',
     conditions: '',
+    selectStyle: '',
     detailInfo: [],
   },
 
@@ -15,10 +17,27 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      isForSelect: options.isForSelect,
       id: options.id,
       conditions: options.conditions,
-    }),
-      this.getDetailInfo()
+    })
+    console.log('coupons_details')
+    var isSelect = this.data.isForSelect
+    console.log(isSelect)
+    if (isSelect == 'true') {
+      console.log('1')
+      this.setData({
+        selectStyle: 'display:block'
+      })
+    }
+    else {
+      console.log('2')
+      this.setData({
+        selectStyle: 'display:none'
+      })
+    }
+    console.log(this.data.selectStyle)
+    this.getDetailInfo()
   },
 
   /**
@@ -104,6 +123,21 @@ Page({
         })
         console.log(that.data.detailInfo)
       }
+    })
+  },
+
+  selectCouponsEvent : function () {
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 3];  // 结账页面
+
+    // 直接调用上级页面的setData()方法，把数据存到上级页面中去
+    prevPage.setData({
+      couponsId: this.data.id,
+      couponsName: this.data.detailInfo.name
+    })
+
+    wx.navigateBack({
+      delta: 2
     })
   },
 

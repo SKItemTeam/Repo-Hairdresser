@@ -7,11 +7,7 @@ Page({
    */
   data: {
     currentTab: 'none',
-    isGetAppointment: false,
-    isGetInService: false,
-    isGetComplete: false,
-    isGetEvaluate: false,
-    isGetDelete: false,
+    userInfo: {},
     appointmentList: [],
     inServiceList : [],
     completeList : [],
@@ -23,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo()
   },
 
   /**
@@ -75,6 +71,23 @@ Page({
 
   },
 
+  getUserInfo : function () {
+    var that = this
+    app.http.request({
+      url: "users",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        that.setData({
+          userInfo: res.data
+        })
+        console.log(that.data.userInfo)
+      }
+    })
+  },
 
   payEvent: function (e) {
     var appid = "wxc71c4fcdedf1c22f"
@@ -108,162 +121,250 @@ Page({
     })
   },
 
-  appointmentTapEvent: function (e) {
-    var that = this;
+  appointmentTapEvent: function (e) { 
+    var that = this
     that.setData({
       currentTab: 'appointment'
-    });
-    if (this.data.isGetAppointment == false) {
-      this.data.isGetAppointment = true
-      app.http.request({
-        url: "orders/making/10/0",
-        header: {
-          'content-type': 'application/json',
-          'Authorization': "Bearer " + app.globalData.token,
-        },
-        method: "GET",
-        success: function (res) {
-          for (var i = 0; i < res.data.rows.length; i++) {
-            res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
-            res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
-          }
-          that.setData({
-            appointmentList: res.data.rows
-          })
-          console.log(that.data.appointmentList)
+    })
+    app.http.request({
+      url: "orders/making/10/0",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        for (var i = 0; i < res.data.rows.length; i++) {
+          res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
+          res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
         }
-      })
-    }
+        that.setData({
+          appointmentList: res.data.rows
+        })
+        console.log(that.data.appointmentList)
+      }
+    })
   },
 
   in_serviceTapEvent: function (e) {
     this.setData({
       currentTab: 'in_service'
     })
-    if (this.data.isGetInService == false) {
-      this.data.isGetInService = true
-      var that = this;
-      app.http.request({
-        url: "orders/servering/10/0",
-        header: {
-          'content-type': 'application/json',
-          'Authorization': "Bearer " + app.globalData.token,
-        },
-        method: "GET",
-        success: function (res) {
-          for (var i = 0; i < res.data.rows.length; i++) {
-            res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
-            res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
-          }
-          that.setData({
-            inServiceList: res.data.rows
-          })
-          console.log(that.data.inServiceList)
+    var that = this;
+    app.http.request({
+      url: "orders/servering/10/0",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        for (var i = 0; i < res.data.rows.length; i++) {
+          res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
+          res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
         }
-      })
-    }
+        that.setData({
+          inServiceList: res.data.rows
+        })
+        console.log(that.data.inServiceList)
+      }
+    })
   },
 
   completeTapEvent: function (e) {
     this.setData({
       currentTab: 'complete'
     })
-    if (this.data.isGetComplete == false) {
-      this.data.isGetComplete = true
-      var that = this;
-      app.http.request({
-        url: "orders/maked/10/0",
-        header: {
-          'content-type': 'application/json',
-          'Authorization': "Bearer " + app.globalData.token,
-        },
-        method: "GET",
-        success: function (res) {
-          for (var i = 0; i < res.data.rows.length; i++) {
-            res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
-            res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
-          }
-          that.setData({
-            completeList: res.data.rows
-          })
-          console.log(that.data.completeList)
+    var that = this;
+    app.http.request({
+      url: "orders/maked/10/0",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        for (var i = 0; i < res.data.rows.length; i++) {
+          res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
+          res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
         }
-      })
-    }
+        that.setData({
+          completeList: res.data.rows
+        })
+        console.log(that.data.completeList)
+      }
+    })
   },
 
   evaluateTapEvent: function (e) {
     this.setData({
       currentTab: 'evaluate'
     })
-    if (this.data.isGetEvaluate == false) {
-      this.data.isGetEvaluate = true
-      var that = this;
-      app.http.request({
-        url: "orders/paid/10/0",
-        header: {
-          'content-type': 'application/json',
-          'Authorization': "Bearer " + app.globalData.token,
-        },
-        method: "GET",
-        success: function (res) {
-          for (var i = 0; i < res.data.rows.length; i++) {
-            res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
-            res.data.rows[i].totalPrice = res.data.rows[i].price - es.data.rows[i].couponValue
-          }
-          that.setData({
-            evaluateList: res.data.rows
-          })
-          console.log(that.data.evaluateList)
+    var that = this;
+    app.http.request({
+      url: "orders/paid/10/0",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        for (var i = 0; i < res.data.rows.length; i++) {
+          res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
+          res.data.rows[i].totalPrice = res.data.rows[i].price - es.data.rows[i].couponValue
         }
-      })
-    }
+        that.setData({
+          evaluateList: res.data.rows
+        })
+        console.log(that.data.evaluateList)
+      }
+    })
   },
 
   deleteTapEvent: function (e) {
     this.setData({
       currentTab: 'delete'
     })
-    if (this.data.isGetDelete == false) {
-      this.data.isGetDelete = true
-      var that = this;
-      app.http.request({
-        url: "/orders/cancel/making/10/0",
-        header: {
-          'content-type': 'application/json',
-          'Authorization': "Bearer " + app.globalData.token,
-        },
-        method: "GET",
-        success: function (res) {
-          for (var i = 0; i < res.data.rows.length; i++) {
-            res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
-            res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
-          }
-          that.setData({
-            deleteList: res.data.rows
-          })
-          console.log(that.data.deleteList)
+    var that = this;
+    app.http.request({
+      url: "orders/cancel/making/10/0",
+      header: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer " + app.globalData.token,
+      },
+      method: "GET",
+      success: function (res) {
+        for (var i = 0; i < res.data.rows.length; i++) {
+          //res.data.rows[i].orderTime = res.data.rows[i].createdate.substring(0, 10)
+          res.data.rows[i].arrvilTime = res.data.rows[i].mkTime.substring(0, 10)
         }
-      })
-    }
+        that.setData({
+          deleteList: res.data.rows
+        })
+        console.log(that.data.deleteList)
+      }
+    })
   },
-
 
   evaluateContextTapEvent: function (e) {
     wx.navigateTo({
-      url: '../../pages/evaluate_context/evaluate_context'
+      url: '../../pages/evaluate_context/evaluate_context?shopnName=' + e.currentTarget.dataset.shopName + '&hairName=' + e.currentTarget.dataset.hairName
     })
   },
 
   couponsTapEvent: function (e) {
     wx.navigateTo({
-      url: '../../pages/coupons/coupons'
+      url: '../../pages/coupons/coupons?isForSelect=false'
     })
   },
 
-  balanceTapEvent: function () {
+  balanceTapEvent: function (e) {
     wx.navigateTo({
-      url: '../../pages/balance/balance',
+      url: '../../pages/balance/balance?shopName=' + e.currentTarget.dataset.shopName + '&hairName=' + e.currentTarget.dataset.hairName + '&itemName=' + e.currentTarget.dataset.itemName
+    })
+  },
+
+  cancleAppointmentEvent : function (e) {
+    var that = this;
+    var orderId = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '是否取消订单',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          app.http.request({
+            url: "orders/cancel/" + orderId,
+            header: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "DELETE",
+            success: function (res) {
+              console.log(res)
+              that.appointmentTapEvent()
+            }
+          })
+        } 
+      }
+    })
+  },
+
+  evaluateDeleteTapEvent : function (e) {
+    var that = this;
+    var orderId = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '是否删除待评论订单',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          app.http.request({
+            url: "orders/nomete/" + orderId,
+            header: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "DELETE",
+            success: function (res) {
+              console.log(res)
+              that.evaluateTapEvent()
+            }
+          })
+        }
+      }
+    })
+  },
+
+  completeOrderDeleteTapEvent: function(e) {
+    var that = this;
+    var orderId = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '是否删除订单',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          app.http.request({
+            url: "orders/" + orderId,
+            header: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "DELETE",
+            success: function (res) {
+              console.log(res)
+              that.completeTapEvent()
+            }
+          })
+        }
+      }
+    })
+  },
+
+  cancleOrderDeleteTapEvent: function (e) {
+    var that = this;
+    var orderId = e.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '是否删除订单',
+      showCancel: true,
+      success: function (res) {
+        if (res.confirm) {
+          app.http.request({
+            url: "orders/" + orderId,
+            header: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer " + app.globalData.token,
+            },
+            method: "DELETE",
+            success: function (res) {
+              console.log(res)
+              that.deleteTapEvent()
+            }
+          })
+        }
+      }
     })
   },
 

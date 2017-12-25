@@ -134,6 +134,16 @@ Page({
             },
             success: function (res) {
                 console.log(res)
+                wx.showModal({
+                  title: '提示',
+                  content: '订单已提交',
+                  showCancel : false,
+                  success: function (res) {
+                    wx.navigateBack({
+                      delta: 1
+                    })
+                  }
+                })
             }
         })
     },
@@ -148,7 +158,7 @@ Page({
             },
             method: "POST",
             data: {
-                "page": 1,
+                "page": 0,
                 "size": 10,
                 "sortNames": [
                     "id"
